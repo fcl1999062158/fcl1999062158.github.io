@@ -3307,6 +3307,8 @@ footer .copyright p {
 .l_body {
   position: relative;
   margin: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 .l_body.nocover {
   margin-top: 64px;
