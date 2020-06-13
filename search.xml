@@ -5,10 +5,10 @@
     
     <entry>
       <title>初识Markdown</title>
-      <link href="/fcl1999062158.github.io/2020/06/13/Markdown/"/>
-      <url>/fcl1999062158.github.io/2020/06/13/Markdown/</url>
+      <link href="/fcl1999062158.github.io/2020/06/13/text/"/>
+      <url>/fcl1999062158.github.io/2020/06/13/text/</url>
       
-        <content type="html"><![CDATA[<h1 id="初识Markdown"><a href="#初识Markdown" class="headerlink" title="初识Markdown"></a>初识Markdown</h1><p><img src="img/markdown.jpg" alt="alt Markdown" title="Markdown封面"></p><p><strong>这是我的第一篇文章，欢迎大家来捧场，在这里，我会介绍‘Markdown’，一种简单的文本标记语言，它只需要普通的一些快捷键即可实现文本与样式的双重输出，我的博客也全都是用Markdown来编写，包括CSDN，简书，GitHub也都支持这种语法编写，最最重要的是学习成本很低，只要很短的时间即可掌握。</strong></p><a id="more"></a><h3 id="1-Markdown编写软件推荐"><a href="#1-Markdown编写软件推荐" class="headerlink" title="1.Markdown编写软件推荐"></a>1.Markdown编写软件推荐</h3><ul><li><p>编写Markdown的软件很多，也有很多好用的，其实只要在CSDN或简书上发表过博客就知道，这两个网站本身默认就是用Markdown编写发表的，而且第一次发表时还提供了完整的教程，在这就推荐一个软件：“Typora”</p></li><li><p><strong>标题样式</strong>:写博客首先就要写标题，而Markdown支持展示6级标题，类似HTML中的“<h1><h2>”, Markdown中的标题更简单，只需在标题文字前加上[# ] 就行</p></li></ul><hr><h1 id="初识Markdown-1"><a href="#初识Markdown-1" class="headerlink" title="初识Markdown"></a>初识Markdown</h1><p><strong>这是我的第一篇文章，欢迎大家来捧场，在这里，我会介绍‘Markdown’，一种简单的文本标记语言，它只需要普通的一些快捷键即可实现文本与样式的双重输出，我的博客也全都是用Markdown来编写，包括CSDN，简书，GitHub也都支持这种语法编写，最最重要的是学习成本很低，只要很短的时间即可掌握。</strong></p><h3 id="1-Markdown编写软件推荐-1"><a href="#1-Markdown编写软件推荐-1" class="headerlink" title="1.Markdown编写软件推荐"></a>1.Markdown编写软件推荐</h3><ul><li><p>编写Markdown的软件很多，也有很多好用的，其实只要在CSDN或简书上发表过博客就知道，这两个网站本身默认就是用Markdown编写发表的，而且第一次发表时还提供了完整的教程，在这就推荐一个软件：“Typora”</p></li><li><p><strong>标题样式</strong>:写博客首先就要写标题，而Markdown支持展示6级标题，类似HTML中的h1,h2标签, Markdown中的标题更简单，只需在标题文字前加上[# ] 就行</p></li></ul>]]></content>
+        <content type="html"><![CDATA[<h1 id="初识Markdown"><a href="#初识Markdown" class="headerlink" title="初识Markdown"></a>初识Markdown</h1><p><img src="/usr/local/blog/themes/volantis/source/img/markdown.jpg" alt="Markdown" title="Markdown封面"></p><p><strong>这是我的第一篇文章，欢迎大家来捧场，在这里，我会介绍‘Markdown’，一种简单的文本标记语言，它只需要普通的一些快捷键即可实现文本与样式的双重输出，我的博客也全都是用Markdown来编写，包括CSDN，简书，GitHub也都支持这种语法编写，最最重要的是学习成本很低，只要很短的时间即可掌握。</strong></p><a id="more"></a><h3 id="1-Markdown编写软件推荐"><a href="#1-Markdown编写软件推荐" class="headerlink" title="1.Markdown编写软件推荐"></a>1.Markdown编写软件推荐</h3><ul><li><p>编写Markdown的软件很多，也有很多好用的，其实只要在CSDN或简书上发表过博客就知道，这两个网站本身默认就是用Markdown编写发表的，而且第一次发表时还提供了完整的教程，在这就推荐一个软件：“Typora”</p></li><li><p><strong>标题样式</strong>:写博客首先就要写标题，而Markdown支持展示6级标题，类似HTML中的h1,h2标签, Markdown中的标题更简单，只需在标题文字前加上[# ] 就行</p></li></ul>]]></content>
       
       
       
@@ -18,10 +18,10 @@
     
     <entry>
       <title>初识Markdown</title>
-      <link href="/fcl1999062158.github.io/2020/06/13/text/"/>
-      <url>/fcl1999062158.github.io/2020/06/13/text/</url>
+      <link href="/fcl1999062158.github.io/2020/06/13/Markdown/"/>
+      <url>/fcl1999062158.github.io/2020/06/13/Markdown/</url>
       
-        <content type="html"><![CDATA[<h1 id="初识Markdown"><a href="#初识Markdown" class="headerlink" title="初识Markdown"></a>初识Markdown</h1><p><img src="img/markdown.jpg" alt="alt Markdown" title="Markdown封面"></p><p><strong>这是我的第一篇文章，欢迎大家来捧场，在这里，我会介绍‘Markdown’，一种简单的文本标记语言，它只需要普通的一些快捷键即可实现文本与样式的双重输出，我的博客也全都是用Markdown来编写，包括CSDN，简书，GitHub也都支持这种语法编写，最最重要的是学习成本很低，只要很短的时间即可掌握。</strong></p><a id="more"></a><h3 id="1-Markdown编写软件推荐"><a href="#1-Markdown编写软件推荐" class="headerlink" title="1.Markdown编写软件推荐"></a>1.Markdown编写软件推荐</h3><ul><li><p>编写Markdown的软件很多，也有很多好用的，其实只要在CSDN或简书上发表过博客就知道，这两个网站本身默认就是用Markdown编写发表的，而且第一次发表时还提供了完整的教程，在这就推荐一个软件：“Typora”</p></li><li><p><strong>标题样式</strong>:写博客首先就要写标题，而Markdown支持展示6级标题，类似HTML中的h1,h2标签, Markdown中的标题更简单，只需在标题文字前加上[# ] 就行</p></li></ul>]]></content>
+        <content type="html"><![CDATA[<h1 id="初识Markdown"><a href="#初识Markdown" class="headerlink" title="初识Markdown"></a>初识Markdown</h1><p><img src="/usr/local/blog/themes/volantis/source/img/markdown.jpg" alt="alt Markdown" title="Markdown封面"></p><p><strong>这是我的第一篇文章，欢迎大家来捧场，在这里，我会介绍‘Markdown’，一种简单的文本标记语言，它只需要普通的一些快捷键即可实现文本与样式的双重输出，我的博客也全都是用Markdown来编写，包括CSDN，简书，GitHub也都支持这种语法编写，最最重要的是学习成本很低，只要很短的时间即可掌握。</strong></p><h3 id="1-Markdown编写软件推荐"><a href="#1-Markdown编写软件推荐" class="headerlink" title="1.Markdown编写软件推荐"></a>1.Markdown编写软件推荐</h3><ul><li><p>编写Markdown的软件很多，也有很多好用的，其实只要在CSDN或简书上发表过博客就知道，这两个网站本身默认就是用Markdown编写发表的，而且第一次发表时还提供了完整的教程，在这就推荐一个软件：“Typora”</p></li><li><p><strong>标题样式</strong>:写博客首先就要写标题，而Markdown支持展示6级标题，类似HTML中的“<h1><h2>”, Markdown中的标题更简单，只需在标题文字前加上[# ] 就行</p></li></ul><hr><h1 id="初识Markdown-1"><a href="#初识Markdown-1" class="headerlink" title="初识Markdown"></a>初识Markdown</h1><p><strong>这是我的第一篇文章，欢迎大家来捧场，在这里，我会介绍‘Markdown’，一种简单的文本标记语言，它只需要普通的一些快捷键即可实现文本与样式的双重输出，我的博客也全都是用Markdown来编写，包括CSDN，简书，GitHub也都支持这种语法编写，最最重要的是学习成本很低，只要很短的时间即可掌握。</strong></p><h3 id="1-Markdown编写软件推荐-1"><a href="#1-Markdown编写软件推荐-1" class="headerlink" title="1.Markdown编写软件推荐"></a>1.Markdown编写软件推荐</h3><ul><li><p>编写Markdown的软件很多，也有很多好用的，其实只要在CSDN或简书上发表过博客就知道，这两个网站本身默认就是用Markdown编写发表的，而且第一次发表时还提供了完整的教程，在这就推荐一个软件：“Typora”</p></li><li><p><strong>标题样式</strong>:写博客首先就要写标题，而Markdown支持展示6级标题，类似HTML中的h1,h2标签, Markdown中的标题更简单，只需在标题文字前加上[# ] 就行</p></li></ul>]]></content>
       
       
       
