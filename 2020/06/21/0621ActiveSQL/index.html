@@ -16,8 +16,12 @@
 
   <!-- 页面元数据 -->
   
-    <title>0621ActiveSQL - MangoBlog~芒果博客，欢迎访问!</title>
+    <title>Mybatis笔记：动态SQL - MangoBlog~芒果博客，欢迎访问!</title>
   
+  
+    <meta name="description" content="动态SQLMybatis笔记：
+if标签：用来做条件判断，如果满足就执行标签内sql
+123&lt;if test="userPassword != null and userPassword != ''"&gt;            and user_password = #&#123;userPasswor...">
   
 
   <!-- feed -->
@@ -199,7 +203,7 @@
           
   <h1 class="title">
     <a href="/fcl1999062158.github.io/2020/06/21/0621ActiveSQL/">
-      0621ActiveSQL
+      Mybatis笔记：动态SQL
     </a>
   </h1>
 
@@ -259,7 +263,7 @@
     <a class='notlink'>
       <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
       
-      <span id="/fcl1999062158.github.io/2020/06/21/0621ActiveSQL/" class="leancloud_visitors" data-flag-title="0621ActiveSQL">
+      <span id="/fcl1999062158.github.io/2020/06/21/0621ActiveSQL/" class="leancloud_visitors" data-flag-title="Mybatis笔记：动态SQL">
       <p>
         <span class="leancloud-visitors-count"></span>
       </p>
@@ -285,6 +289,8 @@
           <h2 id="动态SQL"><a href="#动态SQL" class="headerlink" title="动态SQL"></a>动态SQL</h2><p><strong>Mybatis笔记：</strong></p>
 <p>if标签：用来做条件判断，如果满足就执行标签内sql</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">if</span> test=<span class="string">"userPassword != null and userPassword != ''"</span>&gt;</span><br><span class="line">            and user_password = #&#123;userPassword&#125;</span><br><span class="line">&lt;/if&gt;</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
 
 <p>choose标签：类似java的switch，otherwise类似defult</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;choose&gt;</span><br><span class="line">    &lt;when test=<span class="string">"author != null and author.name != null"</span>&gt;</span><br><span class="line">      AND author_name like #&#123;author.name&#125;</span><br><span class="line">    &lt;/when&gt;</span><br><span class="line">    &lt;otherwise&gt;</span><br><span class="line">      AND featured = <span class="number">1</span></span><br><span class="line">    &lt;/otherwise&gt;</span><br><span class="line">&lt;/choose&gt;</span><br></pre></td></tr></table></figure>
@@ -385,7 +391,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-21T23:17:31+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-21T23:50:59+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：Jun 21, 2020</p>
@@ -412,7 +418,9 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=fcl1999062158.github.io/2020/06/21/0621ActiveSQL/&title=0621ActiveSQL - MangoBlog~芒果博客，欢迎访问!&summary="
+          href="http://connect.qq.com/widget/shareqq/index.html?url=fcl1999062158.github.io/2020/06/21/0621ActiveSQL/&title=Mybatis笔记：动态SQL - MangoBlog~芒果博客，欢迎访问!&summary=动态SQLMybatis笔记：
+if标签：用来做条件判断，如果满足就执行标签内sql
+123&lt;if test="userPassword != null and userPassword != ''"&gt;            and user_password = #&#123;userPassword&#125;&lt;/if&gt;"
           
           >
           
@@ -424,7 +432,9 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=fcl1999062158.github.io/2020/06/21/0621ActiveSQL/&title=0621ActiveSQL - MangoBlog~芒果博客，欢迎访问!&summary="
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=fcl1999062158.github.io/2020/06/21/0621ActiveSQL/&title=Mybatis笔记：动态SQL - MangoBlog~芒果博客，欢迎访问!&summary=动态SQLMybatis笔记：
+if标签：用来做条件判断，如果满足就执行标签内sql
+123&lt;if test="userPassword != null and userPassword != ''"&gt;            and user_password = #&#123;userPassword&#125;&lt;/if&gt;"
           
           >
           
@@ -436,7 +446,9 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=fcl1999062158.github.io/2020/06/21/0621ActiveSQL/&title=0621ActiveSQL - MangoBlog~芒果博客，欢迎访问!&summary="
+          href="http://service.weibo.com/share/share.php?url=fcl1999062158.github.io/2020/06/21/0621ActiveSQL/&title=Mybatis笔记：动态SQL - MangoBlog~芒果博客，欢迎访问!&summary=动态SQLMybatis笔记：
+if标签：用来做条件判断，如果满足就执行标签内sql
+123&lt;if test="userPassword != null and userPassword != ''"&gt;            and user_password = #&#123;userPassword&#125;&lt;/if&gt;"
           
           >
           
@@ -509,7 +521,7 @@
 
   <script>
     window.subData = {
-      title: '0621ActiveSQL',
+      title: 'Mybatis笔记：动态SQL',
       tools: true
     }
   </script>

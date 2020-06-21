@@ -376,7 +376,7 @@
           
   <h2 class="title">
     <a href="/fcl1999062158.github.io/2020/06/21/0621ActiveSQL/">
-      0621ActiveSQL
+      Mybatis笔记：动态SQL
     </a>
   </h2>
 
@@ -445,24 +445,15 @@
         <h2 id="动态SQL"><a href="#动态SQL" class="headerlink" title="动态SQL"></a>动态SQL</h2><p><strong>Mybatis笔记：</strong></p>
 <p>if标签：用来做条件判断，如果满足就执行标签内sql</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">if</span> test=<span class="string">"userPassword != null and userPassword != ''"</span>&gt;</span><br><span class="line">            and user_password = #&#123;userPassword&#125;</span><br><span class="line">&lt;/if&gt;</span><br></pre></td></tr></table></figure>
-
-<p>choose标签：类似java的switch，otherwise类似defult</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;choose&gt;</span><br><span class="line">    &lt;when test=<span class="string">"author != null and author.name != null"</span>&gt;</span><br><span class="line">      AND author_name like #&#123;author.name&#125;</span><br><span class="line">    &lt;/when&gt;</span><br><span class="line">    &lt;otherwise&gt;</span><br><span class="line">      AND featured = <span class="number">1</span></span><br><span class="line">    &lt;/otherwise&gt;</span><br><span class="line">&lt;/choose&gt;</span><br></pre></td></tr></table></figure>
-
-<p>trim标签：用于替换标签，如果标签内的if标签生效，才会添加where语句，并且会选择性去除and或or语句,也可用于替换set，prefix代表前缀，suffix代表后缀</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;trim prefix=<span class="string">"where"</span> prefixOverrides=<span class="string">"and|or"</span>&gt;</span><br><span class="line">	&lt;<span class="keyword">if</span> test=<span class="string">"state != null"</span>&gt;</span><br><span class="line">         state = #&#123;state&#125;</span><br><span class="line">    &lt;/if&gt;</span><br><span class="line">    &lt;<span class="keyword">if</span> test=<span class="string">"title != null"</span>&gt;</span><br><span class="line">        AND title like #&#123;title&#125;</span><br><span class="line">    &lt;/if&gt;</span><br><span class="line">    &lt;<span class="keyword">if</span> test=<span class="string">"author != null and author.name != null"</span>&gt;</span><br><span class="line">        AND author_name like #&#123;author.name&#125;</span><br><span class="line">    &lt;/if&gt;</span><br><span class="line">&lt;/trim&gt;</span><br></pre></td></tr></table></figure>
-
-<p>where和set标签：和<trim prefix="where">一样，只不过不会去除or和and,set标签会自动去除 , </p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;set&gt;</span><br><span class="line">    &lt;if test="username != null"&gt;username=#&#123;username&#125;,&lt;/if&gt;</span><br><span class="line">    &lt;if test="password != null"&gt;password=#&#123;password&#125;,&lt;/if&gt;</span><br><span class="line">&lt;/set&gt;</span><br><span class="line">&lt;where&gt;</span><br><span class="line">    &lt;<span class="keyword">if</span> test=<span class="string">"state != null"</span>&gt;</span><br><span class="line">         state = #&#123;state&#125;</span><br><span class="line">    &lt;/if&gt;</span><br><span class="line">&lt;/where&gt;</span><br></pre></td></tr></table></figure>
-
-<p>foreach标签：遍历标签，<strong>item</strong>:集合，<strong>index</strong>:索引值，<strong>open</strong>:遍历出的数据开头的字符，<strong>close</strong>:结束的字符，<strong>collection</strong>:相当于是el表达式的items，如果传递的是一个参数，并且这个参数是list时collection只能写list，是array，collection只能写array如果传递的参数是map，collection写的是map的key<strong>。</strong>separator**:每次遍历完成加 , </p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;delete id=<span class="string">"deleteByForeach"</span>&gt;</span><br><span class="line">		delete from student where sno in</span><br><span class="line">		&lt;foreach collection=<span class="string">"array"</span> item=<span class="string">"stuno"</span> open=<span class="string">"("</span> close=<span class="string">")"</span> separator=<span class="string">","</span>&gt;</span><br><span class="line">			#&#123;stuno&#125;</span><br><span class="line">		&lt;/foreach&gt;</span><br><span class="line">&lt;/delete&gt;</span><br></pre></td></tr></table></figure>
-
-<p>其他不常用，不做记录…</p>
-
       
     </div>
     
+      
+        <div class="button readmore">
+          <a href="/fcl1999062158.github.io/2020/06/21/0621ActiveSQL/">
+            阅读全文 <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
       
     
   </section>
