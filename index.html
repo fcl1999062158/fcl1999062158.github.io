@@ -387,6 +387,105 @@
         
           
   <h2 class="title">
+    <a href="/2021/03/04/SpringBootAuto/">
+      SpringBoot自动配置原理
+    </a>
+  </h2>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a href="" rel="nofollow">
+    <img src="https://cdn.jsdelivr.net/gh/fcl1999062158/fcl1999062158.github.io@v1.5.6/img/mario.png">
+    <p>芒果</p>
+  </a>
+</div>
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：Mar 4, 2021</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>1.1k words</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>4 min</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="SpringBoot自动配置原理"><a href="#SpringBoot自动配置原理" class="headerlink" title="SpringBoot自动配置原理"></a>SpringBoot自动配置原理</h2><h3 id="先写总结"><a href="#先写总结" class="headerlink" title="先写总结"></a>先写总结</h3><p>SpringBoot先加载所有自动配置类<br>每个自动配置类按条件进行生效，默认都会绑定配置文件制定的值<br>生效的配置类，会给容器中装配很多组件，并且生效组件功能<br>只要用户有自己配置的，以自定义的优先。首先Springboot在autoconfigure包里的METE-INF/spring.factories配置好了所有需要加载的自动配置类，启动后先扫描到spring.factories文件，获取到所有需要加载的自动配置类（按需加载，如果没有导入该配置的包，则所有配置都不生效，通过@Conditional来判断），导入需要加载的自动配置类。</p>
+      
+    </div>
+    
+      
+        <div class="button readmore">
+          <a href="/2021/03/04/SpringBootAuto/">
+            阅读全文 <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+      
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post white-box shadow floatable reveal ">
+  
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h2 class="title">
     <a href="/2021/03/04/SpringBootNoob1/">
       SpringBoot新手入门笔记
     </a>
@@ -456,151 +555,15 @@
       
         <h1 id="SpringBoot新手入门笔记"><a href="#SpringBoot新手入门笔记" class="headerlink" title="SpringBoot新手入门笔记"></a>SpringBoot新手入门笔记</h1><h3 id="一-版本要求"><a href="#一-版本要求" class="headerlink" title="一.版本要求"></a>一.版本要求</h3><p>JDK1.8+<br>maven3.3+<br>Spring Framework 5.2.9.RELEASE+</p>
 <h3 id="二-Springboot可以干什么"><a href="#二-Springboot可以干什么" class="headerlink" title="二.Springboot可以干什么"></a>二.Springboot可以干什么</h3><p>微服务开发 分布式<br>响应式编程 异步数据流 少量资源进行高吞吐量<br>Cloud分布式云开发<br>web开发<br>函数式服务<br>事件驱动<br>批处理</p>
-<h3 id="三-目录"><a href="#三-目录" class="headerlink" title="三.目录"></a>三.目录</h3><p>只要静态资源放在类路径下的这些文件夹，就能直接访问：localhsot:80/xxx.html<br>static<br>public<br>resources<br>META-INF/resources</p>
-<p>原理：请求进来先去controller处理请求，controller无法处理再去找是否存在静态资源<br>修改访问静态资源指定路径：spring.mvc.static-path-pattern: /res/**<br>修改静态资源存放路径: spring.resources.static-locations: classpath:/tupian/</p>
-<h3 id="四-HelloWorld"><a href="#四-HelloWorld" class="headerlink" title="四.HelloWorld"></a>四.HelloWorld</h3><h4 id="1-pom-xml配置"><a href="#1-pom-xml配置" class="headerlink" title="1.pom.xml配置"></a>1.pom.xml配置</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>2.1.0.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>2.1.0.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="2-main方法类加上"><a href="#2-main方法类加上" class="headerlink" title="2.main方法类加上"></a>2.main方法类加上</h4><p>@SpringBootApplication注解 ,表示该类是SpringBoot主配置类，springboot就会运行该类main方法来启动sb应用</p>
-<h4 id="3-方法里运行"><a href="#3-方法里运行" class="headerlink" title="3.方法里运行"></a>3.方法里运行</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SpringApplication.run(SpringBootTest<span class="class">.<span class="keyword">class</span>,<span class="title">args</span>)</span>;</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-其他类加上对应SpringMVC注解，如"><a href="#4-其他类加上对应SpringMVC注解，如" class="headerlink" title="4.其他类加上对应SpringMVC注解，如"></a>4.其他类加上对应SpringMVC注解，如</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line">publicclassActionDemo&#123;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@ResponseBody</span></span><br><span class="line">	<span class="meta">@RequestMapping</span>(<span class="string">"/hello"</span>)</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">hello</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">"helloworld!"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
       
     </div>
     
       
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow floatable reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2021/03/04/SpringBootAuto/">
-      SpringBoot自动配置原理
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a href="" rel="nofollow">
-    <img src="https://cdn.jsdelivr.net/gh/fcl1999062158/fcl1999062158.github.io@v1.5.6/img/mario.png">
-    <p>芒果</p>
-  </a>
-</div>
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Mar 4, 2021</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  <div class="new-meta-item wordcount">
-    <a class='notlink'>
-      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>1.1k words</p>
-    </a>
-  </div>
-  <div class="new-meta-item readtime">
-    <a class='notlink'>
-      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>4 min</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-
-            
-          
+        <div class="button readmore">
+          <a href="/2021/03/04/SpringBootNoob1/">
+            阅读全文 <i class="fas fa-chevron-right"></i>
+          </a>
         </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="SpringBoot自动配置原理"><a href="#SpringBoot自动配置原理" class="headerlink" title="SpringBoot自动配置原理"></a>SpringBoot自动配置原理</h2><h3 id="先写总结"><a href="#先写总结" class="headerlink" title="先写总结"></a>先写总结</h3><p>SpringBoot先加载所有自动配置类<br>每个自动配置类按条件进行生效，默认都会绑定配置文件制定的值<br>生效的配置类，会给容器中装配很多组件，并且生效组件功能<br>只要用户有自己配置的，以自定义的优先。首先Springboot在autoconfigure包里的METE-INF/spring.factories配置好了所有需要加载的自动配置类，启动后先扫描到spring.factories文件，获取到所有需要加载的自动配置类（按需加载，如果没有导入该配置的包，则所有配置都不生效，通过@Conditional来判断），导入需要加载的自动配置类。</p>
-<h3 id="自动配置前提"><a href="#自动配置前提" class="headerlink" title="自动配置前提"></a>自动配置前提</h3><ul>
-<li><p>主程序的SpringApplication.run(SpringMain.class,args) 会返回一个ioc容器，包含当前应用所有组件</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ConfigurableApplicationContext run = SpringApplication.run(SpringMain<span class="class">.<span class="keyword">class</span>,<span class="title">args</span>)</span>;</span><br></pre></td></tr></table></figure>
-
-
-</li>
-</ul>
-<ul>
-<li><p>主程序类默认扫描同级和子包下的类，scanBasePackages可以指定扫描包:@SpringBootApplication(scanBasePackages=”com.cn”) </p>
-</li>
-<li><p>@SpringBootApplication下默认指定了SpringMVC的@ComponentScan包扫描注解，所以无法使用@ComponentScan</p>
-</li>
-<li><p>@SpringBootApplication等同于以下3个注解组合</p>
-<p>@SpringBootConfiguration</p>
-<p>@EnableAutoConfiguration</p>
-<p>@ComponentScan</p>
-</li>
-<li><p>各种默认配置最终都是配置到一个类上，包括application.properties里的配置</p>
-</li>
-<li><p>Springboot所有自动配置功能都在这里，自动配置也是按需加载</p>
-</li>
-</ul>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-autoconfigure<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.3.4.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">scope</span>&gt;</span>compile<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="底层注解"><a href="#底层注解" class="headerlink" title="底层注解"></a>底层注解</h3><p>1.配置类里使用@Bean标注在方法上给容器注册组件，默认也是单实例<br>2.配置类本身也是组件<br>3.@Configuration在Springboor2中，有个属性proxyBeanMethods，默认为true，表示代理Spring中的Bean方法，外部无论对配置类中组件调用多少次，获取的都是之前容器中注册的单实例对象，获取到配置类都是代理对象调用方法。</p>
-<p>将proxyBeanMethods设为false的优势就是轻量，启动时不会检查依赖组件是否在容器中注册</p>
-<p>将proxyBeanMethods设为true的优势就是能保证容器中依赖的组件就是容器中的组件</p>
-<p>@Import（DBHelper.class） 自动给容器中创建出这个类型的组件，调用这些类型的无参构造器</p>
-<p>@Conditional( )按照条件装配，满足指定条件才进行组件注入，根注解，派生了很多子注解<br>@ConditionalOnBean(User.class) 当容器中存在该组件，才执行<br>@ConditionalOnMissingBean(User.class) 当容器中没有该组件，才执行<br>@ConditionalOnClass(User.class)  当容器中存在该类，才执行<br>@ConditionalOnResource  当项目类路径中存在某个资源的时候，才执行<br>@ConditionalOnJava()   当使用的是某个Java版本号时，才执行<br>@ConditionalOnWebApplication  当此项目是Web应用时，才执行</p>
-<p>@ImportResource(“classpath:beans.xml”) 导入一个资源，如：在配置类导入spring的xml配置文件，使其在配置文件配置的组件生效</p>
-<p>@ConfigurationProperties(prefix = “mycar”)将配置文件中的组件与该类绑定，需为spring容器的组件（@Component）才能使用</p>
-<p>如配置文件中mycar.name=”宝马” 对应该类的name属性为”宝马”</p>
-<p>@EnableConfigurationProperties(Car.class) 标注在配置类上<br>1.开启 Car 的配置绑定功能<br>2.将Car 组件自动注入到容器中（无需标注@Component）</p>
-<h3 id="自动配置注解流程"><a href="#自动配置注解流程" class="headerlink" title="自动配置注解流程"></a>自动配置注解流程</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span> 注解详解：↓</span><br><span class="line">	<span class="meta">@SpringBootConfiguration</span> ↓</span><br><span class="line">		<span class="meta">@Configuration</span>（配置类）</span><br><span class="line">		</span><br><span class="line">	<span class="meta">@ComponentScan</span> （指定扫描路径）</span><br><span class="line">	</span><br><span class="line">	<span class="meta">@EnableAutoConfiguration</span> ↓</span><br><span class="line">		<span class="meta">@AutoConfigurationPackage</span>  ↓ （自动配置包）</span><br><span class="line">			@Import(AutoConfigurationPackages.Registrar.class)(利用Registrar给容器中导入一系列组件)[得到主程序类所在包，并导入集合，相当于把该包下的所有组件批量注册进来]</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">public</span> <span class="meta">@interface</span> AutoConfigurationPackage &#123;&#125;</span><br></pre></td></tr></table></figure>
-
-<p>@Import(AutoConfigurationImportSelector.class) ↓<br>String[] selectImports(AnnotationMetadata annotationMetadata) 确定应该导入的自动配置<br>getAutoConfigurationEntry(annotationMetadata)  所有导入的配置都是调用该方法得到<br>getCandidateConfigurations(annotationMetadata, attributes)  获取到所有需要导入到容器中的配置类<br>SpringFactoriesLoader.<em>loadFactoryNames</em>(getSpringFactoriesLoaderFactoryClass() 利用工厂加载<br>Map&lt;String, List<String>&gt; loadSpringFactories(@Nullable ClassLoader classLoader)   得到所有组件</p>
-<p>从META-INF/spring.factories位置来加载一个文件，默认扫描当前系统所有META-INF/spring.factories位置的文件</p>
-<p>所有自动配置都在这个文件里写死了，springboot一启动就要给容器加载的所有自动配置类,虽然这些自动配置启动时全部加载，但最终会按需配置</p>
-
-      
-    </div>
-    
       
     
   </section>
@@ -727,107 +690,6 @@
         
           
   <h2 class="title">
-    <a href="/2020/08/12/0621ActiveSQL/">
-      Mybatis笔记：动态SQL
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a href="" rel="nofollow">
-    <img src="https://cdn.jsdelivr.net/gh/fcl1999062158/fcl1999062158.github.io@v1.5.6/img/mario.png">
-    <p>芒果</p>
-  </a>
-</div>
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Aug 12, 2020</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  <div class="new-meta-item wordcount">
-    <a class='notlink'>
-      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>415 words</p>
-    </a>
-  </div>
-  <div class="new-meta-item readtime">
-    <a class='notlink'>
-      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>2 min</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="动态SQL"><a href="#动态SQL" class="headerlink" title="动态SQL"></a>动态SQL</h2><p><strong>Mybatis笔记：</strong></p>
-<h3 id="if标签："><a href="#if标签：" class="headerlink" title="if标签："></a>if标签：</h3><p>用来做条件判断，如果满足就执行标签内sql</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">if</span> test=<span class="string">"userPassword != null and userPassword != ''"</span>&gt;</span><br><span class="line">            and user_password = #&#123;userPassword&#125;</span><br><span class="line">&lt;/if&gt;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-      
-        <div class="button readmore">
-          <a href="/2020/08/12/0621ActiveSQL/">
-            阅读全文 <i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow floatable reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
     <a href="/2020/08/12/0613markdown/">
       初识Markdown
     </a>
@@ -907,6 +769,107 @@
       
         <div class="button readmore">
           <a href="/2020/08/12/0613markdown/">
+            阅读全文 <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+      
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post white-box shadow floatable reveal ">
+  
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h2 class="title">
+    <a href="/2020/08/12/0621ActiveSQL/">
+      Mybatis笔记：动态SQL
+    </a>
+  </h2>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a href="" rel="nofollow">
+    <img src="https://cdn.jsdelivr.net/gh/fcl1999062158/fcl1999062158.github.io@v1.5.6/img/mario.png">
+    <p>芒果</p>
+  </a>
+</div>
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：Aug 12, 2020</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>415 words</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>2 min</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="动态SQL"><a href="#动态SQL" class="headerlink" title="动态SQL"></a>动态SQL</h2><p><strong>Mybatis笔记：</strong></p>
+<h3 id="if标签："><a href="#if标签：" class="headerlink" title="if标签："></a>if标签：</h3><p>用来做条件判断，如果满足就执行标签内sql</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">if</span> test=<span class="string">"userPassword != null and userPassword != ''"</span>&gt;</span><br><span class="line">            and user_password = #&#123;userPassword&#125;</span><br><span class="line">&lt;/if&gt;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+      
+        <div class="button readmore">
+          <a href="/2020/08/12/0621ActiveSQL/">
             阅读全文 <i class="fas fa-chevron-right"></i>
           </a>
         </div>

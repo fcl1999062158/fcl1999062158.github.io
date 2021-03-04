@@ -19,6 +19,8 @@
     <title>SpringBoot自动配置原理 - MangoBlog~芒果博客，欢迎访问!</title>
   
   
+    <meta name="description" content="SpringBoot自动配置原理先写总结SpringBoot先加载所有自动配置类每个自动配置类按条件进行生效，默认都会绑定配置文件制定的值生效的配置类，会给容器中装配很多组件，并且生效组件功能只要用户有自己配置的，以自定义的优先。首先Springboot在autoconfigure包里的METE-INF/spri...">
+  
 
   <!-- feed -->
   
@@ -283,6 +285,8 @@
         <div class="article-entry" itemprop="articleBody">
           
           <h2 id="SpringBoot自动配置原理"><a href="#SpringBoot自动配置原理" class="headerlink" title="SpringBoot自动配置原理"></a>SpringBoot自动配置原理</h2><h3 id="先写总结"><a href="#先写总结" class="headerlink" title="先写总结"></a>先写总结</h3><p>SpringBoot先加载所有自动配置类<br>每个自动配置类按条件进行生效，默认都会绑定配置文件制定的值<br>生效的配置类，会给容器中装配很多组件，并且生效组件功能<br>只要用户有自己配置的，以自定义的优先。首先Springboot在autoconfigure包里的METE-INF/spring.factories配置好了所有需要加载的自动配置类，启动后先扫描到spring.factories文件，获取到所有需要加载的自动配置类（按需加载，如果没有导入该配置的包，则所有配置都不生效，通过@Conditional来判断），导入需要加载的自动配置类。</p>
+<a id="more"></a>
+
 <h3 id="自动配置前提"><a href="#自动配置前提" class="headerlink" title="自动配置前提"></a>自动配置前提</h3><ul>
 <li><p>主程序的SpringApplication.run(SpringMain.class,args) 会返回一个ioc容器，包含当前应用所有组件</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ConfigurableApplicationContext run = SpringApplication.run(SpringMain<span class="class">.<span class="keyword">class</span>,<span class="title">args</span>)</span>;</span><br></pre></td></tr></table></figure>
@@ -291,7 +295,8 @@
 </li>
 </ul>
 <ul>
-<li><p>主程序类默认扫描同级和子包下的类，scanBasePackages可以指定扫描包:@SpringBootApplication(scanBasePackages=”com.cn”) </p>
+<li><p>主程序类默认扫描同级和子包下的类，scanBasePackages可以指定扫描包:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span>(scanBasePackages=<span class="string">"com.cn"</span>)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>@SpringBootApplication下默认指定了SpringMVC的@ComponentScan包扫描注解，所以无法使用@ComponentScan</p>
 </li>
@@ -407,7 +412,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-04T16:42:59+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-04T16:56:08+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：Mar 4, 2021</p>
@@ -434,7 +439,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=fcl1999062158.github.io/2021/03/04/SpringBootAuto/&title=SpringBoot自动配置原理 - MangoBlog~芒果博客，欢迎访问!&summary="
+          href="http://connect.qq.com/widget/shareqq/index.html?url=fcl1999062158.github.io/2021/03/04/SpringBootAuto/&title=SpringBoot自动配置原理 - MangoBlog~芒果博客，欢迎访问!&summary=SpringBoot自动配置原理先写总结SpringBoot先加载所有自动配置类每个自动配置类按条件进行生效，默认都会绑定配置文件制定的值生效的配置类，会给容器中装配很多组件，并且生效组件功能只要用户有自己配置的，以自定义的优先。首先Springboot在autoconfigure包里的METE-INF/spring.factories配置好了所有需要加载的自动配置类，启动后先扫描到spring.factories文件，获取到所有需要加载的自动配置类（按需加载，如果没有导入该配置的包，则所有配置都不生效，通过@Conditional来判断），导入需要加载的自动配置类。"
           
           >
           
@@ -446,7 +451,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=fcl1999062158.github.io/2021/03/04/SpringBootAuto/&title=SpringBoot自动配置原理 - MangoBlog~芒果博客，欢迎访问!&summary="
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=fcl1999062158.github.io/2021/03/04/SpringBootAuto/&title=SpringBoot自动配置原理 - MangoBlog~芒果博客，欢迎访问!&summary=SpringBoot自动配置原理先写总结SpringBoot先加载所有自动配置类每个自动配置类按条件进行生效，默认都会绑定配置文件制定的值生效的配置类，会给容器中装配很多组件，并且生效组件功能只要用户有自己配置的，以自定义的优先。首先Springboot在autoconfigure包里的METE-INF/spring.factories配置好了所有需要加载的自动配置类，启动后先扫描到spring.factories文件，获取到所有需要加载的自动配置类（按需加载，如果没有导入该配置的包，则所有配置都不生效，通过@Conditional来判断），导入需要加载的自动配置类。"
           
           >
           
@@ -458,7 +463,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=fcl1999062158.github.io/2021/03/04/SpringBootAuto/&title=SpringBoot自动配置原理 - MangoBlog~芒果博客，欢迎访问!&summary="
+          href="http://service.weibo.com/share/share.php?url=fcl1999062158.github.io/2021/03/04/SpringBootAuto/&title=SpringBoot自动配置原理 - MangoBlog~芒果博客，欢迎访问!&summary=SpringBoot自动配置原理先写总结SpringBoot先加载所有自动配置类每个自动配置类按条件进行生效，默认都会绑定配置文件制定的值生效的配置类，会给容器中装配很多组件，并且生效组件功能只要用户有自己配置的，以自定义的优先。首先Springboot在autoconfigure包里的METE-INF/spring.factories配置好了所有需要加载的自动配置类，启动后先扫描到spring.factories文件，获取到所有需要加载的自动配置类（按需加载，如果没有导入该配置的包，则所有配置都不生效，通过@Conditional来判断），导入需要加载的自动配置类。"
           
           >
           
@@ -482,16 +487,11 @@
         
           <div class="prev-next">
             
-              <a class='prev' href='/2021/03/04/SpringBootNoob1/'>
-                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>SpringBoot新手入门笔记</p>
+            
+              <a class='next' href='/2021/03/04/SpringBootNoob1/'>
+                <p class='title'>SpringBoot新手入门笔记<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
                 <p class='content'>SpringBoot新手入门笔记一.版本要求JDK1.8+maven3.3+Spring Framework 5.2.9.RELEASE+
 二.Springboot可以干什么微服务开发 分布式响...</p>
-              </a>
-            
-            
-              <a class='next' href='/2021/02/27/welcome/'>
-                <p class='title'>欢迎欢迎<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-                <p class='content'>这里是个无名小站专门用来分享我的个人博客，本网站正式建立于2020年6月13日，目前是个部署在Github上的静态网站，本站永久域名为mangoblog.top，如果觉得文章写的还不错的话可以分...</p>
               </a>
             
           </div>
