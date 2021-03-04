@@ -16,7 +16,7 @@
 
   <!-- 页面元数据 -->
   
-    <title>欢迎欢迎 - MangoBlog~芒果博客，欢迎访问!</title>
+    <title>SpringBoot新手入门笔记 - MangoBlog~芒果博客，欢迎访问!</title>
   
   
 
@@ -198,8 +198,8 @@
         
           
   <h1 class="title">
-    <a href="/2021/02/27/welcome/">
-      欢迎欢迎
+    <a href="/2021/03/04/SpringBootNoob1/">
+      SpringBoot新手入门笔记
     </a>
   </h1>
 
@@ -229,7 +229,7 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Feb 27, 2021</p>
+    <p>发布于：Mar 4, 2021</p>
   </a>
 </div>
 
@@ -240,7 +240,7 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>111 words</p>
+      <p>327 words</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -259,7 +259,7 @@
     <a class='notlink'>
       <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
       
-      <span id="/2021/02/27/welcome/" class="leancloud_visitors" data-flag-title="欢迎欢迎">
+      <span id="/2021/03/04/SpringBootNoob1/" class="leancloud_visitors" data-flag-title="SpringBoot新手入门笔记">
       <p>
         <span class="leancloud-visitors-count"></span>
       </p>
@@ -282,7 +282,17 @@
       <section class="article typo">
         <div class="article-entry" itemprop="articleBody">
           
-          <h2 id="这里是个无名小站"><a href="#这里是个无名小站" class="headerlink" title="这里是个无名小站"></a>这里是个无名小站</h2><p><strong>专门用来分享我的个人博客，本网站正式建立于2020年6月13日，目前是个部署在Github上的静态网站，本站永久域名为<a href="https://www.mangoblog.top" target="_blank" rel="noopener">mangoblog.top</a>，如果觉得文章写的还不错的话可以分享给有需要的人，欢迎在评论区留言，但请注意文明上网，谢谢配合！如有问题，欢迎加我<a href="http://wpa.qq.com/msgrd?v=3&uin=1574412974&site=qq&menu=yes" target="_blank" rel="noopener">QQ</a>一起探讨!!</strong></p>
+          <h1 id="SpringBoot新手入门笔记"><a href="#SpringBoot新手入门笔记" class="headerlink" title="SpringBoot新手入门笔记"></a>SpringBoot新手入门笔记</h1><h3 id="一-版本要求"><a href="#一-版本要求" class="headerlink" title="一.版本要求"></a>一.版本要求</h3><p>JDK1.8+<br>maven3.3+<br>Spring Framework 5.2.9.RELEASE+</p>
+<h3 id="二-Springboot可以干什么"><a href="#二-Springboot可以干什么" class="headerlink" title="二.Springboot可以干什么"></a>二.Springboot可以干什么</h3><p>微服务开发 分布式<br>响应式编程 异步数据流 少量资源进行高吞吐量<br>Cloud分布式云开发<br>web开发<br>函数式服务<br>事件驱动<br>批处理</p>
+<h3 id="三-目录"><a href="#三-目录" class="headerlink" title="三.目录"></a>三.目录</h3><p>只要静态资源放在类路径下的这些文件夹，就能直接访问：localhsot:80/xxx.html<br>static<br>public<br>resources<br>META-INF/resources</p>
+<p>原理：请求进来先去controller处理请求，controller无法处理再去找是否存在静态资源<br>修改访问静态资源指定路径：spring.mvc.static-path-pattern: /res/**<br>修改静态资源存放路径: spring.resources.static-locations: classpath:/tupian/</p>
+<h3 id="四-HelloWorld"><a href="#四-HelloWorld" class="headerlink" title="四.HelloWorld"></a>四.HelloWorld</h3><h4 id="1-pom-xml配置"><a href="#1-pom-xml配置" class="headerlink" title="1.pom.xml配置"></a>1.pom.xml配置</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>2.1.0.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>2.1.0.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2-main方法类加上"><a href="#2-main方法类加上" class="headerlink" title="2.main方法类加上"></a>2.main方法类加上</h4><p>@SpringBootApplication注解 ,表示该类是SpringBoot主配置类，springboot就会运行该类main方法来启动sb应用</p>
+<h4 id="3-方法里运行"><a href="#3-方法里运行" class="headerlink" title="3.方法里运行"></a>3.方法里运行</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SpringApplication.run(SpringBootTest<span class="class">.<span class="keyword">class</span>,<span class="title">args</span>)</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-其他类加上对应SpringMVC注解，如"><a href="#4-其他类加上对应SpringMVC注解，如" class="headerlink" title="4.其他类加上对应SpringMVC注解，如"></a>4.其他类加上对应SpringMVC注解，如</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line">publicclassActionDemo&#123;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@ResponseBody</span></span><br><span class="line">	<span class="meta">@RequestMapping</span>(<span class="string">"/hello"</span>)</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">hello</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">"helloworld!"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
           
             <div class='article_footer'>
@@ -369,10 +379,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-27T00:51:57+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-04T16:43:36+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Feb 27, 2021</p>
+    <p>更新于：Mar 4, 2021</p>
   </a>
 </div>
 
@@ -396,7 +406,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=fcl1999062158.github.io/2021/02/27/welcome/&title=欢迎欢迎 - MangoBlog~芒果博客，欢迎访问!&summary="
+          href="http://connect.qq.com/widget/shareqq/index.html?url=fcl1999062158.github.io/2021/03/04/SpringBootNoob1/&title=SpringBoot新手入门笔记 - MangoBlog~芒果博客，欢迎访问!&summary="
           
           >
           
@@ -408,7 +418,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=fcl1999062158.github.io/2021/02/27/welcome/&title=欢迎欢迎 - MangoBlog~芒果博客，欢迎访问!&summary="
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=fcl1999062158.github.io/2021/03/04/SpringBootNoob1/&title=SpringBoot新手入门笔记 - MangoBlog~芒果博客，欢迎访问!&summary="
           
           >
           
@@ -420,7 +430,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=fcl1999062158.github.io/2021/02/27/welcome/&title=欢迎欢迎 - MangoBlog~芒果博客，欢迎访问!&summary="
+          href="http://service.weibo.com/share/share.php?url=fcl1999062158.github.io/2021/03/04/SpringBootNoob1/&title=SpringBoot新手入门笔记 - MangoBlog~芒果博客，欢迎访问!&summary="
           
           >
           
@@ -444,15 +454,10 @@
         
           <div class="prev-next">
             
-              <a class='prev' href='/2021/03/04/SpringBootAuto/'>
-                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>SpringBoot自动配置原理</p>
+            
+              <a class='next' href='/2021/03/04/SpringBootAuto/'>
+                <p class='title'>SpringBoot自动配置原理<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
                 <p class='content'>SpringBoot自动配置原理先写总结SpringBoot先加载所有自动配置类每个自动配置类按条件进行生效，默认都会绑定配置文件制定的值生效的配置类，会给容器中装配很多组件，并且生效组件功能只...</p>
-              </a>
-            
-            
-              <a class='next' href='/2020/09/04/clb/'>
-                <p class='title'>腾讯云负载均衡（CLB）笔记<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-                <p class='content'>负载均衡概念：负载均衡（Cloud Load Balancer）是对多台云服务器进行流量分发的服务。负载均衡可以通过流量分发扩展应用系统对外的服务能力，通过消除单点故障提升应用系统的可用性，负载...</p>
               </a>
             
           </div>
@@ -497,7 +502,7 @@
 
   <script>
     window.subData = {
-      title: '欢迎欢迎',
+      title: 'SpringBoot新手入门笔记',
       tools: true
     }
   </script>
@@ -523,7 +528,7 @@
 
 
     <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#这里是个无名小站"><span class="toc-text">这里是个无名小站</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一-版本要求"><span class="toc-text">一.版本要求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二-Springboot可以干什么"><span class="toc-text">二.Springboot可以干什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三-目录"><span class="toc-text">三.目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四-HelloWorld"><span class="toc-text">四.HelloWorld</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-pom-xml配置"><span class="toc-text">1.pom.xml配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-main方法类加上"><span class="toc-text">2.main方法类加上</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-方法里运行"><span class="toc-text">3.方法里运行</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-其他类加上对应SpringMVC注解，如"><span class="toc-text">4.其他类加上对应SpringMVC注解，如</span></a></li></ol></li></ol>
     </div>
   </section>
 
